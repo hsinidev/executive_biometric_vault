@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EXECUTIVE-VAULT | SECURE COMMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Hanken+Grotesk:wght@700;800&amp;family=Geist:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e5e2e1",
+                        "surface-tint": "#c7c6c4",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "secondary-container": "#2f486a",
+                        "surface-dim": "#141313",
+                        "primary-container": "#e3e2e0",
+                        "on-surface-variant": "#c4c7c4",
+                        "surface-container-high": "#2a2a29",
+                        "on-tertiary-container": "#656464",
+                        "surface": "#141313",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "tertiary-container": "#e5e2e1",
+                        "surface-container-highest": "#353434",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-container-low": "#1c1b1b",
+                        "on-secondary": "#163152",
+                        "surface-container": "#201f1f",
+                        "error-container": "#93000a",
+                        "on-primary": "#303130",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "primary-fixed": "#e3e2e0",
+                        "on-secondary-fixed": "#001c3a",
+                        "primary-fixed-dim": "#c7c6c4",
+                        "secondary-fixed": "#d4e3ff",
+                        "background": "#141313",
+                        "outline-variant": "#444845",
+                        "on-primary-container": "#646463",
+                        "secondary-fixed-dim": "#afc8f0",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "on-tertiary": "#313030",
+                        "inverse-primary": "#5e5e5d",
+                        "inverse-on-surface": "#313030",
+                        "surface-bright": "#3a3939",
+                        "on-primary-fixed": "#1b1c1b",
+                        "secondary": "#afc8f0",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#2f486a",
+                        "on-error": "#690005",
+                        "surface-variant": "#353434",
+                        "outline": "#8e918e",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-fixed-variant": "#464746",
+                        "on-secondary-container": "#9eb7de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-thin": "1px",
+                        "border-thick": "3px",
+                        "unit": "8px",
+                        "margin": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Geist"],
+                        "mono-label": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "mono-label": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .milled-edge {
+            box-shadow: inset 1px 1px 0px 0px rgba(227, 226, 224, 0.1), inset -1px -1px 0px 0px rgba(0, 0, 0, 0.5);
+        }
+        .segmented-progress {
+            background-image: linear-gradient(90deg, #ffffff 50%, transparent 50%);
+            background-size: 8px 100%;
+        }
+        .etched-input {
+            box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-base selection:bg-primary selection:text-on-primary">
+<div class="flex h-screen overflow-hidden">
+<!-- Navigation Drawer (SideNav for Desktop) -->
+<aside class="hidden md:flex flex-col h-full w-80 border-r-border-thick border-outline bg-surface p-margin">
+<div class="mb-10">
+<span class="font-display-lg text-primary text-display-lg">COMMANDER_01</span>
+<p class="font-mono-label text-on-surface-variant text-mono-label mt-2">CLEARANCE: LEVEL 5</p>
+<p class="font-mono-label text-on-surface-variant opacity-50 text-mono-label">NODE: SECURE-A</p>
+</div>
+<nav class="flex flex-col space-y-4">
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-mono-label text-mono-label uppercase" href="#">
+<span class="material-symbols-outlined">vpn_key</span>
+                    ENCRYPTION KEYS
+                </a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-mono-label text-mono-label uppercase" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+                    AUDIT LOGS
+                </a>
+<a class="flex items-center gap-4 p-4 bg-primary-container text-on-primary-container font-bold border-l-border-thick border-primary font-mono-label text-mono-label uppercase" href="#">
+<span class="material-symbols-outlined">terminal</span>
+                    TERMINAL
+                </a>
+<a class="flex items-center gap-4 p-4 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-mono-label text-mono-label uppercase" href="#">
+<span class="material-symbols-outlined">power_settings_new</span>
+                    LOGOUT
+                </a>
+</nav>
+<div class="mt-auto pt-8 border-t border-outline-variant">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container-highest border border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+</div>
+<div>
+<div class="font-mono-label text-primary text-mono-label">ENCRYPTION ACTIVE</div>
+<div class="font-mono-label text-on-surface-variant text-[10px]">AES-256-GCM</div>
+</div>
+</div>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0 bg-surface-dim overflow-y-auto">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface-container border-b-border-thick border-outline flex justify-between items-center px-gutter py-unit w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<h1 class="font-mono-label text-headline-md uppercase tracking-tighter text-primary">EXECUTIVE-VAULT</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-6">
+<button class="font-mono-label text-mono-label text-primary font-bold uppercase">ASSETS</button>
+<button class="font-mono-label text-mono-label text-on-surface-variant uppercase hover:text-primary">REQUESTS</button>
+<button class="font-mono-label text-mono-label text-on-surface-variant uppercase hover:text-primary">BIO-SCAN</button>
+</div>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:bg-primary hover:text-on-primary p-2 transition-colors">lock_reset</span>
+</div>
+</header>
+<!-- Dual Pane Content -->
+<div class="p-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter max-w-7xl mx-auto w-full flex-1">
+<!-- Left Pane: Secure Transmission Log -->
+<section class="lg:col-span-7 flex flex-col space-y-gutter">
+<div class="bg-surface-container border-thick border-outline milled-edge overflow-hidden">
+<div class="bg-surface-container-highest p-4 border-b border-outline flex justify-between items-center">
+<h2 class="font-mono-label text-primary text-mono-label uppercase font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history</span>
+                                SECURE TRANSMISSION LOG
+                            </h2>
+<span class="font-mono-label text-[10px] text-on-surface-variant">NODE: 0xFF-ALFA-4</span>
+</div>
+<div class="p-gutter space-y-6 max-h-[600px] overflow-y-auto">
+<!-- Log Entry 1 -->
+<div class="border-l-border-thick border-outline-variant pl-4 py-2">
+<div class="flex justify-between items-start mb-2">
+<span class="font-mono-label text-primary font-bold uppercase text-[10px]">COMMANDER_01 [AUTH_VERIFIED]</span>
+<span class="font-mono-label text-on-surface-variant opacity-50 text-[10px]">2023-10-24 14:32:01 UTC</span>
+</div>
+<p class="text-on-surface text-body-base leading-relaxed">
+                                    Annual audit of cold-storage encryption keys completed. No anomalies detected in Segment 04. Rotating RSA-4096 masters at 00:00.
+                                </p>
+</div>
+<!-- Log Entry 2 -->
+<div class="border-l-border-thick border-error pl-4 py-2 bg-error-container/10">
+<div class="flex justify-between items-start mb-2">
+<span class="font-mono-label text-error font-bold uppercase text-[10px]">SYSTEM_DAEMON [ALERT]</span>
+<span class="font-mono-label text-on-surface-variant opacity-50 text-[10px]">2023-10-24 09:15:44 UTC</span>
+</div>
+<p class="text-on-surface text-body-base leading-relaxed">
+                                    Unauthorized biometric attempt detected at Perimeter C. Access denied. Hardened protocols initiated. Scanning IP 192.168.1.104.
+                                </p>
+</div>
+<!-- Log Entry 3 -->
+<div class="border-l-border-thick border-outline-variant pl-4 py-2">
+<div class="flex justify-between items-start mb-2">
+<span class="font-mono-label text-primary font-bold uppercase text-[10px]">OPERATOR_ZERO [AUTH_VERIFIED]</span>
+<span class="font-mono-label text-on-surface-variant opacity-50 text-[10px]">2023-10-23 21:04:12 UTC</span>
+</div>
+<p class="text-on-surface text-body-base leading-relaxed">
+                                    Requesting emergency bypass key authorization for Vault Partition Omega. Maintenance on cooling system required.
+                                </p>
+</div>
+</div>
+<!-- Add Note Interface -->
+<div class="p-gutter bg-surface-container-low border-t border-outline">
+<div class="relative">
+<textarea class="w-full bg-surface-container-lowest etched-input border border-outline-variant p-4 text-on-surface font-mono-label text-sm min-h-[100px] focus:outline-none focus:border-primary placeholder:opacity-30" placeholder="ENTER SECURE TRANSMISSION..."></textarea>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<button class="bg-surface-container-high border border-outline-variant px-4 py-2 font-mono-label text-mono-label uppercase hover:bg-primary hover:text-on-primary transition-all">
+                                        ATTACH_ENC
+                                    </button>
+<button class="bg-primary text-on-primary border border-primary px-6 py-2 font-mono-label text-mono-label font-bold uppercase hover:bg-on-surface transition-all active:scale-95">
+                                        TRANSMIT
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Pane: Security FAQ -->
+<aside class="lg:col-span-5 space-y-gutter">
+<div class="bg-surface-container-high border-thick border-outline milled-edge p-gutter">
+<h2 class="font-display-lg text-primary text-headline-md uppercase mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+                            SECURITY_PROTOCOLS.md
+                        </h2>
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="group border-b border-outline-variant pb-6 cursor-pointer">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-mono-label text-primary font-bold text-sm">01. BIOMETRIC_RECOGNITION</h3>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">add_box</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed hidden group-hover:block transition-all">
+                                    Systems utilize multi-spectral iris scanning and sub-dermal capillary mapping. 3D depth-sensing ensures bypass of high-fidelity synthetic masks. Authorized personnel are required to recalibrate every 30 days.
+                                </p>
+</div>
+<!-- FAQ Item 2 -->
+<div class="group border-b border-outline-variant pb-6 cursor-pointer">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-mono-label text-primary font-bold text-sm">02. ENCRYPTION_STANDARDS</h3>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">add_box</span>
+</div>
+<div class="hidden group-hover:block space-y-2">
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                                        All static data is encrypted using AES-256-GCM with hardware-backed security modules (HSM). 
+                                    </p>
+<div class="bg-surface-container-lowest p-3 border border-outline-variant">
+<code class="font-mono-label text-[10px] text-primary">SHA-512_SALT_COMPLETED_SUCCESS</code>
+</div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="group border-b border-outline-variant pb-6 cursor-pointer">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-mono-label text-primary font-bold text-sm">03. EMERGENCY_BYPASS</h3>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">add_box</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed hidden group-hover:block">
+                                    In the event of total network isolation, physical 2FA physical keys (Titanium Series) must be inserted into Node A and B simultaneously within a 5-second window.
+                                </p>
+</div>
+</div>
+</div>
+<!-- Industrial Component: Scanning Gauge -->
+<div class="bg-surface-container border-thick border-outline p-gutter">
+<div class="flex justify-between items-end mb-4">
+<div>
+<div class="font-mono-label text-on-surface-variant text-[10px] uppercase">Integrity Scan</div>
+<div class="font-mono-label text-primary text-headline-md">99.98%</div>
+</div>
+<div class="font-mono-label text-primary text-[10px] animate-pulse">SYSTEM_STABLE</div>
+</div>
+<div class="h-4 w-full bg-surface-container-lowest border border-outline-variant overflow-hidden relative">
+<div class="h-full w-[99.98%] segmented-progress opacity-80"></div>
+</div>
+</div>
+<!-- Visual Accent Image -->
+<div class="h-48 w-full border-thick border-outline overflow-hidden bg-black">
+<img class="w-full h-full object-cover grayscale opacity-60" data-alt="A high-contrast macro photograph of a mechanical server rack interior with green laser scanning lines cutting across matte black metal surfaces. The lighting is cold and cinematic, emphasizing industrial textures and sharp edges. Cables are routed with mathematical precision, illuminated by faint blue LED indicators in a dark, high-security environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlQqDm9OV4XLx26LNmdPiQPaClRdumpKdnAIeqR2QCJ2EVoopnsFeE6FuIOHfF0AwNfPD8Ly3PgwB3Usta_TE9FGncYfWurRM0pBFURVx5IdsRimjH5fKEXjTurG1EKHQEFYxxVe8aPjNp7WkoCgbqpdP0HQdLz8pJs9E0iWzaDFk6CXfcDHBSBvCS3AvCWHEjZ8iHSBPeLrEQF7S9lmC5URAqIy-lP4tYcKh3MOgNmvxZJUmPoqvr3i3tzD5nwevRDTC1QKiK5Xlz"/>
+</div>
+</aside>
+</div>
+<!-- Bottom Bar (Mobile Navigation Pivot) -->
+<footer class="md:hidden sticky bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-20 bg-surface-container-highest border-t-border-thick border-outline">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 w-full hover:bg-secondary-container">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-mono-label text-[10px] uppercase">ASSETS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 w-full hover:bg-secondary-container">
+<span class="material-symbols-outlined">priority_high</span>
+<span class="font-mono-label text-[10px] uppercase">REQUESTS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 w-full hover:bg-secondary-container">
+<span class="material-symbols-outlined">fingerprint</span>
+<span class="font-mono-label text-[10px] uppercase">BIO-SCAN</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-none h-full w-full border-x-border-thin border-outline-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-mono-label text-[10px] uppercase">VAULT</span>
+</button>
+</footer>
+</main>
+</div>
+</body></html>

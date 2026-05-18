@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Geist:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "outline-variant": "#444845",
+                  "error-container": "#93000a",
+                  "inverse-on-surface": "#313030",
+                  "on-secondary-fixed-variant": "#2f486a",
+                  "primary-container": "#e3e2e0",
+                  "secondary-container": "#2f486a",
+                  "on-secondary-container": "#9eb7de",
+                  "on-tertiary": "#313030",
+                  "tertiary": "#ffffff",
+                  "on-primary-fixed-variant": "#464746",
+                  "secondary-fixed-dim": "#afc8f0",
+                  "secondary": "#afc8f0",
+                  "primary-fixed": "#e3e2e0",
+                  "tertiary-container": "#e5e2e1",
+                  "primary": "#ffffff",
+                  "on-surface-variant": "#c4c7c4",
+                  "tertiary-fixed-dim": "#c9c6c5",
+                  "on-error-container": "#ffdad6",
+                  "on-surface": "#e5e2e1",
+                  "surface-container-low": "#1c1b1b",
+                  "tertiary-fixed": "#e5e2e1",
+                  "on-secondary": "#163152",
+                  "on-tertiary-fixed": "#1c1b1b",
+                  "surface-container": "#201f1f",
+                  "surface-container-highest": "#353434",
+                  "on-primary-container": "#646463",
+                  "on-tertiary-container": "#656464",
+                  "surface-container-lowest": "#0e0e0e",
+                  "inverse-surface": "#e5e2e1",
+                  "inverse-primary": "#5e5e5d",
+                  "on-primary": "#303130",
+                  "outline": "#8e918e",
+                  "surface-variant": "#353434",
+                  "error": "#ffb4ab",
+                  "on-error": "#690005",
+                  "surface": "#141313",
+                  "background": "#141313",
+                  "on-background": "#e5e2e1",
+                  "surface-bright": "#3a3939",
+                  "surface-dim": "#141313"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "border-thick": "3px",
+                  "border-thin": "1px",
+                  "margin": "40px",
+                  "unit": "8px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "display-lg": ["Hanken Grotesk"],
+                  "mono-label": ["JetBrains Mono"],
+                  "headline-md": ["Hanken Grotesk"],
+                  "body-base": ["Geist"]
+          },
+          "fontSize": {
+                  "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                  "mono-label": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                  "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                  "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .milled-edge {
+      box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.1), inset -1px -1px 0px 0px rgba(0, 0, 0, 0.5);
+    }
+    .glass-overlay {
+      backdrop-filter: blur(20px);
+      background: rgba(22, 49, 82, 0.7);
+    }
+    .scanner-line {
+      height: 2px;
+      background: #ffffff;
+      box-shadow: 0 0 15px #ffffff;
+      position: absolute;
+      width: 100%;
+      top: 0;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-base overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="bg-surface-container text-primary docked full-width top-0 border-b-border-thick border-outline flex justify-between items-center px-gutter py-unit w-full sticky z-[60]">
+<div class="flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<span class="font-mono-label text-headline-md uppercase tracking-tighter text-primary">EXECUTIVE-VAULT</span>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="hidden md:flex gap-4">
+<button class="font-mono-label text-mono-label text-primary font-bold hover:bg-primary hover:text-on-primary transition-colors duration-150 px-2 py-1">ASSETS</button>
+<button class="font-mono-label text-mono-label text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-150 px-2 py-1">REQUESTS</button>
+<button class="font-mono-label text-mono-label text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-150 px-2 py-1">BIO-SCAN</button>
+<button class="font-mono-label text-mono-label text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-150 px-2 py-1">VAULT</button>
+</div>
+<span class="material-symbols-outlined text-primary cursor-pointer active:scale-95 transition-transform" data-icon="lock_reset">lock_reset</span>
+</div>
+</header>
+<main class="flex flex-col md:flex-row min-h-[calc(100vh-144px)]">
+<!-- NavigationDrawer -->
+<aside class="hidden md:flex flex-col h-full w-80 border-r-border-thick border-outline bg-surface p-margin shrink-0">
+<div class="mb-gutter flex items-start gap-4">
+<div class="w-12 h-12 bg-secondary-container border-border-thin border-outline flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="person">person</span>
+</div>
+<div>
+<h3 class="font-mono-label text-mono-label text-primary">COMMANDER_01</h3>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest">CLEARANCE: LEVEL 5</p>
+<p class="text-[10px] text-on-surface-variant opacity-60">NODE: SECURE-A</p>
+</div>
+</div>
+<nav class="space-y-4">
+<a class="flex items-center gap-3 p-3 bg-primary-container text-on-primary-container font-bold border-l-border-thick border-primary font-mono-label text-mono-label" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key">vpn_key</span>
+          ENCRYPTION KEYS
+        </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-mono-label text-mono-label" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+          AUDIT LOGS
+        </a>
+<a class="flex items-center gap-3 p-3 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors font-mono-label text-mono-label" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+          TERMINAL
+        </a>
+<div class="pt-8 mt-auto">
+<button class="flex items-center gap-3 p-3 text-error hover:bg-error-container hover:text-white w-full transition-colors font-mono-label text-mono-label">
+<span class="material-symbols-outlined" data-icon="power_settings_new">power_settings_new</span>
+            LOGOUT
+          </button>
+</div>
+</nav>
+</aside>
+<!-- Content Canvas -->
+<section class="flex-1 p-gutter md:p-margin bg-background relative overflow-hidden">
+<!-- Background Texture (Atmospheric) -->
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<div class="h-full w-full" style="background-image: radial-gradient(circle at 2px 2px, #ffffff 1px, transparent 0); background-size: 40px 40px;"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto space-y-gutter">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<div class="space-y-2">
+<span class="font-mono-label text-mono-label text-secondary uppercase tracking-[0.3em]">SECURE ACCESS MODULE // EM-09</span>
+<h1 class="font-display-lg text-display-lg uppercase leading-none">Emergency Bypass</h1>
+</div>
+<button class="group relative px-gutter py-4 border-thick border-error bg-surface-container-highest text-error font-mono-label text-mono-label uppercase hover:bg-error hover:text-on-error transition-all active:scale-95 milled-edge">
+<span class="relative z-10 flex items-center gap-2 font-extrabold">
+<span class="material-symbols-outlined" data-icon="report">report</span>
+              Immediate Lockdown
+            </span>
+</button>
+</div>
+<!-- Main Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Verification Status Card -->
+<div class="md:col-span-4 bg-surface-container border-thick border-outline p-gutter milled-edge flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-start">
+<span class="font-mono-label text-mono-label opacity-60">AUTH_STATUS</span>
+<span class="material-symbols-outlined text-secondary" data-icon="lock">lock</span>
+</div>
+<div class="h-24 w-full bg-surface-container-lowest border-thin border-outline-variant flex items-center justify-center relative overflow-hidden">
+<div class="scanner-line"></div>
+<span class="material-symbols-outlined text-primary text-5xl opacity-20" data-icon="fingerprint">fingerprint</span>
+<div class="absolute inset-0 flex items-center justify-center">
+<p class="font-mono-label text-mono-label text-center px-4">AWAITING SECONDARY BIOMETRIC SCAN</p>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full border-thick border-primary text-primary py-4 font-mono-label text-mono-label hover:bg-primary hover:text-on-primary transition-all uppercase">
+              Initiate Scan
+            </button>
+</div>
+<!-- Active Codes Card -->
+<div class="md:col-span-8 bg-surface-container border-thick border-outline milled-edge overflow-hidden">
+<div class="bg-secondary-container p-unit px-gutter flex justify-between items-center border-b border-outline">
+<span class="font-mono-label text-mono-label text-on-secondary-container">RECOVERY_POOL_V4</span>
+<span class="font-mono-label text-mono-label text-on-secondary-container opacity-60">3/5 REMAINING</span>
+</div>
+<div class="p-gutter relative">
+<!-- Overlay to hide codes until auth -->
+<div class="absolute inset-0 glass-overlay z-20 flex flex-col items-center justify-center p-gutter text-center">
+<span class="material-symbols-outlined text-5xl mb-4" data-icon="encrypted">encrypted</span>
+<p class="font-mono-label text-mono-label max-w-xs">BYPASS CODES ARE ENCRYPTED. COMPLETE BIOMETRIC VERIFICATION TO VIEW.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-lowest border-thin border-outline-variant font-mono-label text-lg flex justify-between items-center group cursor-not-allowed">
+<span>XXXX-XXXX-XXXX</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="visibility_off">visibility_off</span>
+</div>
+<div class="p-4 bg-surface-container-lowest border-thin border-outline-variant font-mono-label text-lg flex justify-between items-center opacity-40 grayscale">
+<span class="line-through">9A2F-4KC8-PR2L</span>
+<span class="text-xs bg-error-container text-white px-2">USED</span>
+</div>
+<div class="p-4 bg-surface-container-lowest border-thin border-outline-variant font-mono-label text-lg flex justify-between items-center">
+<span>XXXX-XXXX-XXXX</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="visibility_off">visibility_off</span>
+</div>
+<div class="p-4 bg-surface-container-lowest border-thin border-outline-variant font-mono-label text-lg flex justify-between items-center opacity-40 grayscale">
+<span class="line-through">B33X-0912-LM90</span>
+<span class="text-xs bg-error-container text-white px-2">USED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Technical Specs / Log Card -->
+<div class="md:col-span-7 bg-surface-container-low border-thick border-outline p-gutter milled-edge">
+<h4 class="font-mono-label text-mono-label text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+               ACCESS_AUDIT_LOG
+             </h4>
+<div class="space-y-3">
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">2024.05.12 14:22:01</span>
+<span class="font-mono-label text-[10px] text-secondary">LOGIN_SUCCESS: COMMANDER_01</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">2024.05.12 11:05:44</span>
+<span class="font-mono-label text-[10px] text-error">WARN: FAILED_BIOMETRIC_ATTEMPT (NODE: SECURE-B)</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant pb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">2024.05.11 09:12:30</span>
+<span class="font-mono-label text-[10px] text-on-surface-variant">CODE_REGEN_TRIGGERED: AUTH_LEVEL_5</span>
+</div>
+</div>
+</div>
+<!-- Regeneration Actions -->
+<div class="md:col-span-5 bg-surface-container border-thick border-outline p-gutter milled-edge flex flex-col justify-center items-center text-center space-y-4">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" data-icon="refresh">refresh</span>
+<div>
+<p class="font-mono-label text-mono-label text-primary mb-1">REGENERATE ALL CODES</p>
+<p class="text-xs text-on-surface-variant">Existing unused codes will be immediately invalidated and purged from the physical buffer.</p>
+</div>
+<button class="w-full bg-surface-container-highest border-thin border-outline py-3 font-mono-label text-mono-label hover:border-primary hover:text-primary transition-all">
+              Cycle Encryption Keys
+            </button>
+</div>
+</div>
+<!-- Security Warning -->
+<div class="bg-error-container/20 border-thick border-error p-gutter flex items-center gap-gutter">
+<span class="material-symbols-outlined text-error text-4xl" data-icon="gpp_maybe">gpp_maybe</span>
+<div>
+<h5 class="font-mono-label text-mono-label text-error font-bold">PHYSICAL SECURITY WARNING</h5>
+<p class="text-xs text-on-surface">Emergency codes allow full system bypass. Do not store digitally. Write codes on physical media and store in a Grade A fireproof safe. Any digital capture (screenshots) will trigger an immediate system-wide audit.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-20 bg-surface-container-highest border-t-border-thick border-outline">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-secondary-container hover:text-on-secondary-container w-full">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-mono-label text-mono-label uppercase mt-1">ASSETS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-secondary-container hover:text-on-secondary-container w-full">
+<span class="material-symbols-outlined" data-icon="priority_high">priority_high</span>
+<span class="font-mono-label text-mono-label uppercase mt-1">REQUESTS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-secondary-container hover:text-on-secondary-container w-full">
+<span class="material-symbols-outlined" data-icon="fingerprint">fingerprint</span>
+<span class="font-mono-label text-mono-label uppercase mt-1">BIO-SCAN</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-none h-full w-full border-x-border-thin border-outline-variant">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-mono-label text-mono-label uppercase mt-1">VAULT</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EXECUTIVE-VAULT | SECURE INVENTORY</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;family=Geist:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .milled-edge {
+            box-shadow: inset 1px 1px 0px 0px rgba(227, 226, 224, 0.1), 
+                        inset -1px -1px 0px 0px rgba(0, 0, 0, 0.5);
+        }
+        .etched-recess {
+            box-shadow: inset 2px 2px 4px 0px rgba(0, 0, 0, 0.6);
+        }
+        .segmented-progress {
+            background-image: linear-gradient(90deg, currentColor 50%, transparent 50%);
+            background-size: 8px 100%;
+        }
+        .glass-overlay {
+            backdrop-filter: blur(20px);
+            background: rgba(20, 19, 19, 0.8);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#444845",
+                        "error-container": "#93000a",
+                        "inverse-on-surface": "#313030",
+                        "on-secondary-fixed-variant": "#2f486a",
+                        "primary-container": "#e3e2e0",
+                        "secondary-container": "#2f486a",
+                        "on-secondary-container": "#9eb7de",
+                        "on-tertiary": "#313030",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#464746",
+                        "secondary-fixed-dim": "#afc8f0",
+                        "secondary": "#afc8f0",
+                        "primary-fixed": "#e3e2e0",
+                        "tertiary-container": "#e5e2e1",
+                        "primary": "#ffffff",
+                        "on-surface-variant": "#c4c7c4",
+                        "tertiary-fixed-dim": "#c9c6c5",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-secondary": "#163152",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container": "#201f1f",
+                        "surface-container-highest": "#353434",
+                        "on-primary-container": "#646463",
+                        "on-tertiary-container": "#656464",
+                        "surface-container-lowest": "#0e0e0e",
+                        "inverse-surface": "#e5e2e1",
+                        "inverse-primary": "#5e5e5d",
+                        "on-primary": "#303130",
+                        "outline": "#8e918e",
+                        "surface-variant": "#353434",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed": "#1b1c1b",
+                        "primary-fixed-dim": "#c7c6c4",
+                        "surface-container-high": "#2a2a29",
+                        "secondary-fixed": "#d4e3ff",
+                        "surface-tint": "#c7c6c4",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "surface": "#141313",
+                        "on-secondary-fixed": "#001c3a",
+                        "background": "#141313",
+                        "on-background": "#e5e2e1",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#141313"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "border-thick": "3px",
+                        "border-thin": "1px",
+                        "margin": "40px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-base": ["Geist"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "mono-label": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-base": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-base selection:bg-primary selection:text-on-primary min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-surface-container text-primary font-mono-label text-headline-md uppercase tracking-tighter docked full-width top-0 border-b-border-thick border-outline flex justify-between items-center px-gutter py-unit w-full sticky z-[100]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="verified_user">verified_user</span>
+<span class="font-mono-label text-headline-md uppercase tracking-tighter text-primary">EXECUTIVE-VAULT</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-primary hover:text-on-primary transition-colors duration-150 p-2 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="lock_reset">lock_reset</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin pt-12 grid grid-cols-12 gap-gutter">
+<!-- Header Actions Section -->
+<div class="col-span-12 flex justify-between items-end mb-8">
+<div>
+<p class="font-mono-label text-primary mb-2 opacity-60">SYSTEM STATUS: FORTIFIED</p>
+<h1 class="font-display-lg text-display-lg uppercase italic">ASSET_INVENTORY</h1>
+</div>
+<div class="flex gap-4">
+<button class="bg-error-container text-on-error-container border-border-thick border-error px-8 py-4 flex items-center gap-3 active:scale-95 transition-transform milled-edge">
+<span class="material-symbols-outlined" data-icon="gpp_maybe" data-weight="fill">gpp_maybe</span>
+<span class="font-mono-label font-bold uppercase">INITIATE_LOCKDOWN</span>
+</button>
+<button class="bg-primary text-on-primary border-border-thick border-primary px-8 py-4 flex items-center gap-3 hover:bg-secondary-container hover:text-on-secondary-container transition-colors active:scale-95 milled-edge">
+<span class="material-symbols-outlined" data-icon="encrypted">encrypted</span>
+<span class="font-mono-label font-bold uppercase">SECURE_REMOTE_UNLOCK</span>
+</button>
+</div>
+</div>
+<!-- Inventory Grid -->
+<div class="col-span-12 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Asset Card: Physical Documents -->
+<div class="bg-surface-container border-border-thin border-outline-variant p-0 flex flex-col milled-edge">
+<div class="bg-surface-container-high p-4 border-b-border-thin border-outline-variant flex justify-between items-center">
+<span class="font-mono-label text-primary opacity-80 uppercase">MODULE_01</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="description">description</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md uppercase mb-1">PHYSICAL_DOCUMENTS</h3>
+<p class="font-mono-label text-on-surface-variant mb-6 text-xs uppercase tracking-widest">TITLE DEEDS / WILLS / BONDS</p>
+<div class="bg-surface-container-lowest p-4 border-border-thin border-outline-variant mb-6 etched-recess">
+<div class="flex justify-between items-center mb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">TEMP_STABILITY</span>
+<span class="font-mono-label text-[10px] text-primary">68°F / OPTIMAL</span>
+</div>
+<div class="h-2 w-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-primary w-4/5 segmented-progress"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant">SEC_LEVEL</span>
+<span class="font-mono-label text-primary text-sm font-bold uppercase">ULTRA_VIOLET</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline text-primary font-mono-label text-[10px]">LOCKED</span>
+</div>
+</div>
+</div>
+<!-- Asset Card: Jewelry -->
+<div class="bg-surface-container border-border-thin border-outline-variant p-0 flex flex-col milled-edge">
+<div class="bg-surface-container-high p-4 border-b-border-thin border-outline-variant flex justify-between items-center">
+<span class="font-mono-label text-primary opacity-80 uppercase">MODULE_02</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="diamond">diamond</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md uppercase mb-1">PRECIOUS_METALS</h3>
+<p class="font-mono-label text-on-surface-variant mb-6 text-xs uppercase tracking-widest">GOLD / WATCHES / HEIRLOOMS</p>
+<div class="bg-surface-container-lowest p-4 border-border-thin border-outline-variant mb-6 etched-recess">
+<div class="flex justify-between items-center mb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">WEIGHT_SENSORS</span>
+<span class="font-mono-label text-[10px] text-primary">12.45 KG / STABLE</span>
+</div>
+<div class="h-2 w-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-primary w-full segmented-progress"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant">SEC_LEVEL</span>
+<span class="font-mono-label text-primary text-sm font-bold uppercase">GAMMA_RAY</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline text-primary font-mono-label text-[10px]">LOCKED</span>
+</div>
+</div>
+</div>
+<!-- Asset Card: Hard Drives -->
+<div class="bg-surface-container border-border-thin border-outline-variant p-0 flex flex-col milled-edge">
+<div class="bg-surface-container-high p-4 border-b-border-thin border-outline-variant flex justify-between items-center">
+<span class="font-mono-label text-primary opacity-80 uppercase">MODULE_03</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="hard_drive">hard_drive</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md uppercase mb-1">DIGITAL_ARCHIVE</h3>
+<p class="font-mono-label text-on-surface-variant mb-6 text-xs uppercase tracking-widest">NVME / ENCRYPTED_COLD_STORAGE</p>
+<div class="bg-surface-container-lowest p-4 border-border-thin border-outline-variant mb-6 etched-recess">
+<div class="flex justify-between items-center mb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">SIGNAL_SHIELD</span>
+<span class="font-mono-label text-[10px] text-primary">FARADAY_ACTIVE</span>
+</div>
+<div class="h-2 w-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-primary w-[95%] segmented-progress"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant">SEC_LEVEL</span>
+<span class="font-mono-label text-primary text-sm font-bold uppercase">QUANTIC_BLACK</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline text-primary font-mono-label text-[10px]">LOCKED</span>
+</div>
+</div>
+</div>
+<!-- Asset Card: Backup -->
+<div class="bg-surface-container border-border-thin border-outline-variant p-0 flex flex-col milled-edge opacity-60">
+<div class="bg-surface-container-high p-4 border-b-border-thin border-outline-variant flex justify-between items-center">
+<span class="font-mono-label text-primary opacity-80 uppercase">MODULE_04</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="inventory_2">inventory_2</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-headline-md uppercase mb-1">EMPTY_STORAGE</h3>
+<p class="font-mono-label text-on-surface-variant mb-6 text-xs uppercase tracking-widest">AUXILIARY_SECURE_COMPARTMENT</p>
+<div class="bg-surface-container-lowest p-4 border-border-thin border-outline-variant mb-6 etched-recess">
+<div class="flex justify-between items-center mb-2">
+<span class="font-mono-label text-[10px] text-on-surface-variant">CAPACITY</span>
+<span class="font-mono-label text-[10px] text-primary">0% / STANDBY</span>
+</div>
+<div class="h-2 w-full bg-surface-container overflow-hidden flex">
+<div class="h-full bg-outline-variant w-0"></div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-mono-label text-[10px] text-on-surface-variant">SEC_LEVEL</span>
+<span class="font-mono-label text-primary text-sm font-bold uppercase">NOT_ASSIGNED</span>
+</div>
+<span class="px-3 py-1 bg-surface-container-highest border border-outline text-on-surface-variant font-mono-label text-[10px]">VACANT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- System Stats / Terminal Sidebar -->
+<aside class="col-span-12 md:col-span-4 flex flex-col gap-gutter">
+<!-- Biometric Monitor -->
+<div class="bg-surface border-border-thick border-outline p-6 milled-edge">
+<div class="flex justify-between items-center mb-6">
+<span class="font-mono-label text-primary uppercase">BIOMETRIC_FEED</span>
+<div class="w-2 h-2 rounded-full bg-error animate-pulse"></div>
+</div>
+<div class="relative w-full aspect-square bg-surface-container-lowest border border-outline-variant flex items-center justify-center overflow-hidden etched-recess">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+<div class="absolute top-0 left-0 w-full h-[2px] bg-primary/40 shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-[scan_3s_linear_infinite]"></div>
+<img alt="Authorized Identity" class="w-2/3 h-2/3 grayscale opacity-40 mix-blend-screen" data-alt="A high-contrast biometric scan profile of a human face rendered in industrial technical line-art style. The image is monochromatic with deep navy and sharp platinum white highlights, featuring digital grid patterns and scanning artifacts over the facial features. The mood is clinical and highly secure, suggesting advanced facial recognition technology in a darkened environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuDEslAyL8AlbEEQeK2mLkhedv2fuiTUL-4ja5H81md3clLkkWxvDaC4LWJydjO949-fig58pgwJTNCTtpXikKSFtpUV0z4lp0IfsRiJvFe5YwP5LdfwRSTuRg7gOFJSOn1JkWgZoOU_iull1J65hhq1TfYzP3vBeO91YqYX0vr7WFcreHhnu3iARw7i5UAUwNE4SNnxY7mZupDtjjFuKGWMhaHSTR8-glaykV5zDeeMThIGo1Fr3wynwSPKmRGOINY3HQBGVjt9ZN"/>
+<div class="absolute bottom-4 left-4 font-mono-label text-[10px] text-primary leading-tight">
+                        AUTH: COMMANDER_01<br/>
+                        HEART_RATE: 72 BPM<br/>
+                        LOCATION: SECURE-A
+                    </div>
+</div>
+</div>
+<!-- Audit Log Terminal -->
+<div class="bg-surface-container-highest border-border-thin border-outline flex-grow p-6 milled-edge">
+<h4 class="font-mono-label text-primary uppercase mb-4 border-b border-outline-variant pb-2">AUDIT_LOG_STREAM</h4>
+<div class="font-mono-label text-[10px] space-y-3">
+<div class="flex gap-4">
+<span class="text-on-surface-variant shrink-0">14:22:01</span>
+<span class="text-primary">MODULE_01 TEMP_SCAN: NOMINAL</span>
+</div>
+<div class="flex gap-4">
+<span class="text-on-surface-variant shrink-0">14:18:45</span>
+<span class="text-secondary">REMOTE_ACCESS_REQUEST: IGNORED</span>
+</div>
+<div class="flex gap-4">
+<span class="text-on-surface-variant shrink-0">13:59:12</span>
+<span class="text-primary">FARADAY_SHIELD_INTEGRITY: 100%</span>
+</div>
+<div class="flex gap-4">
+<span class="text-on-surface-variant shrink-0">13:30:00</span>
+<span class="text-primary">SYSTEM_SELF_TEST: PASSED</span>
+</div>
+<div class="flex gap-4">
+<span class="text-on-surface-variant shrink-0">12:01:44</span>
+<span class="text-error">UNAUTHORIZED_TOUCH_DETECTED: ALARM_OFF</span>
+</div>
+<div class="flex gap-4">
+<span class="text-on-surface-variant shrink-0">11:45:02</span>
+<span class="text-primary">VAULT_DOOR_CALIBRATION: COMPLETE</span>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-stretch h-20 bg-surface-container-highest border-t-border-thick border-outline">
+<button class="flex flex-col items-center justify-center bg-primary text-on-primary rounded-none h-full w-full border-x-border-thin border-outline-variant transition-all font-mono-label text-mono-label uppercase">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>ASSETS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-secondary-container hover:text-on-secondary-container transition-all font-mono-label text-mono-label uppercase">
+<span class="material-symbols-outlined mb-1" data-icon="priority_high">priority_high</span>
+<span>REQUESTS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-secondary-container hover:text-on-secondary-container transition-all font-mono-label text-mono-label uppercase">
+<span class="material-symbols-outlined mb-1" data-icon="fingerprint">fingerprint</span>
+<span>BIO-SCAN</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:bg-secondary-container hover:text-on-secondary-container transition-all font-mono-label text-mono-label uppercase">
+<span class="material-symbols-outlined mb-1" data-icon="security">security</span>
+<span>VAULT</span>
+</button>
+</nav>
+<style>
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(220px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</body></html>
